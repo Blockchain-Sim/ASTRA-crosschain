@@ -1,12 +1,18 @@
 # ASTRA: An Adaptive Modular Architecture for Scalable and Trustless Cross-Chain Execution
-**Accepted Paper** — Fahad Rahman¹², Farid Nait-Abdesselam¹  
-¹LIP6, Sorbonne University, Paris  
-²University Paris Cité, France  
+
+**Paper** – Fahad Rahman¹², Farid Nait Abdesselam¹  
+¹Laboratory of Informatics Paris Descartes (LIP6), University Paris Cite, Paris, France  
+²Université Paris Cité, Paris, France  
 Contact: fahad@frenchresearcher.com
 
-This artifact contains the **full reproducible prototype** used for all experiments in the paper.
+This repository contains the **complete, reproducible prototype** used for all experiments in the paper (attached as ASTRA.pdf).
 
-### One-Click Demo (2 minutes)
+### Quick Demo (2 Minutes on Ubuntu/WSL)
 ```bash
+# Install Gaia & Hermes (if needed)
+git clone https://github.com/cosmos/gaia.git && cd gaia && make install
+cargo install ibc-relayer-cli --bin hermes
+
+# Run full demo
 chmod +x demo.sh
 ./demo.sh
