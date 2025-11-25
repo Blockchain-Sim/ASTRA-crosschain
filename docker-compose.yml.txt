@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  astra-demo:
+    image: ubuntu:22.04
+    volumes:
+      - .:/workspace
+    command: bash -c "apt update && apt install -y git curl && cd /workspace && chmod +x demo.sh && ./demo.sh"
