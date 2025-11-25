@@ -1,0 +1,12 @@
+# ASTRA: An Adaptive Modular Architecture for Scalable and Trustless Cross-Chain Execution
+**Accepted Paper** — Fahad Rahman¹², Farid Nait-Abdesselam¹  
+¹LIP6, Sorbonne University, Paris  
+²University Paris Cité, France  
+Contact: fahad@frenchresearcher.com
+
+This artifact contains the **full reproducible prototype** used for all experiments in the paper.
+
+### One-Click Demo (2 minutes)
+```bash
+chmod +x demo.sh
+./demo.sh

@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Creating clients, connection, and channel-0..."
+hermes create client --host-chain chain-a --reference-chain chain-b
+hermes create client --host-chain chain-b --reference-chain chain-a
+hermes create connection --a-chain chain-a --b-chain chain-b
+hermes create channel --a-chain chain-a --b-chain chain-b --a-port transfer --b-port transfer
+echo "Channel-0 ready!"

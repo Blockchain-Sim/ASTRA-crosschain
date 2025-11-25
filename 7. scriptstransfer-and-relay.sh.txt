@@ -1,0 +1,12 @@
+#!/bin/bash
+BOB=$(gaiad keys show bob -a --home ~/.gaiaB)
+echo "Sending 10,000,000 stake from Alice → Bob..."
+gaiad tx ibc-transfer transfer transfer channel-0 $BOB 10000000stake \
+  --from alice --chain-id chain-a --home ~/.gaia --fees 5000stake --yes
+
+echo "Manual relay (real light-client proofs)..."
+hermes tx raw packet-recv --dst-chain chain-b --src-chain chain-a --src-port transfer --src-channel channel-0
+hermes tx raw packet-ack --dst-chain chain-a --src-chain chain-b --src-port transfer --src-channel channel-0
+
+echo "Checking balance on chain-b..."
+gaiad query bank balances $BOB --home ~/.gaiaB | grep ibc

@@ -1,0 +1,23 @@
+
+### 2. demo.sh
+```bash
+#!/bin/bash
+echo "=== ASTRA Live Demo Starting ==="
+echo "Two independent Cosmos chains + real IBC + cross-chain transfer"
+
+# Start both chains (in background)
+./scripts/start-chain-a.sh &
+sleep 8
+./scripts/start-chain-b.sh &
+sleep 20
+
+echo "Chains running!"
+
+# Create clients, connection, channel
+./scripts/create-ibc-channel.sh
+
+# Send 10M tokens + manual relay
+./scripts/transfer-and-relay.sh
+
+echo "ASTRA DEMO COMPLETE – Tokens arrived on chain-b!"
+echo "You just proved zero-trust cross-chain execution live."

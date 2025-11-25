@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  demo:
+    image: cosmos/gaia:latest
+    command: bash -c "./demo.sh"
+    volumes:
+      - .:/astra

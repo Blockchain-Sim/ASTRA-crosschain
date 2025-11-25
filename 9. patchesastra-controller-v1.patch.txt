@@ -1,0 +1,17 @@
+--- a/crates/relayer/src/chain/cosmos.rs
++++ b/crates/relayer/src/chain/cosmos.rs
+@@
+-    let mut batch_size = 1;
++    // ASTRA Adaptive Controller (Fahad Rahman, 2025)
++    // Dynamically adjusts batch size based on pending packet queue
++    let pending = self.query_pending_packets().await?;
++    let batch_size = if pending > 100 {
++        50
++    } else if pending > 50 {
++        25
++    } else if pending > 10 {
++        10
++    } else {
++        5
++    };
++    info!("ASTRA: queue={} → batch_size={}", pending, batch_size);

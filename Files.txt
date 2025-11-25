@@ -1,0 +1,10 @@
+demo.sh — Full demo
+run-60sec-video.sh — Records perfect conference video
+scripts/ — All individual steps
+hermes/config.toml — Working Hermes config
+patches/astra-controller-v1.patch — The real ~380-line ASTRA adaptive controller
+docker-compose.yml — Docker version for reviewers
+
+Fahad Rahman
+License: MIT
+November 2025

@@ -1,0 +1,24 @@
+[global]
+log_level = "info"
+
+[[chains]]
+id = "chain-a"
+rpc_addr = "http://127.0.0.1:26657"
+grpc_addr = "http://127.0.0.1:9090"
+websocket_addr = "ws://127.0.0.1:26657/websocket"
+account_prefix = "cosmos"
+key_name = "alice"
+store_prefix = "ibc"
+gas_price = { price = 0.025, denom = "stake" }
+clock_drift = "30s"
+
+[[chains]]
+id = "chain-b"
+rpc_addr = "http://127.0.0.1:26557"
+grpc_addr = "http://127.0.0.1:9091"
+websocket_addr = "ws://127.0.0.1:26557/websocket"
+account_prefix = "cosmos"
+key_name = "bob"
+store_prefix = "ibc"
+gas_price = { price = 0.025, denom = "stake" }
+clock_drift = "30s"
